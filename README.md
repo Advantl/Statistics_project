@@ -75,7 +75,33 @@
 
 ## Техническая информация о проекте
 - Стек
-- Структура
+  
+**Структура репозитория**
+Statistics_project/  
+├── config/   
+│   └── config.ini # Основной конфигурационный файл - скрыт   
+│      
+├── etl/  
+│   ├── __init__.py    
+│   ├── db_connection.py  # Получение данных из SQL   
+│   └── data_cleaner.py  # Очистка данных  
+│  
+├── notebooks/   
+│ ├── hypothesis_01.ipynb   
+│ ├── hypothesis_02.ipynb   
+│ ├── hypothesis_03.ipynb  
+│ ├── hypothesis_04.ipynb   
+│ ├── hypothesis_05.ipynb   
+│ ├── hypothesis_06.ipynb   
+│ ├── hypothesis_07.ipynb   
+│ ├── hypothesis_08.ipynb   
+│ ├── hypothesis_09.ipynb    
+│ └── hypothesis_10.ipynb   
+│         
+├── visualizations/ # графики и таблицы    
+├── requirements.txt  # Зависимости    
+└── README.md # Описание проекта    
+  
 - Как воспроизвести
 
 
