@@ -912,4 +912,8 @@ Statistics_project/
 
 ### Воспроизведение результатов    
 
+```
+pip install -r requirements.txt  
+```
+
 [↑ Вернуться к содержанию](#содержание)
