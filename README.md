@@ -800,8 +800,7 @@ H₁: Категория прибыльности зависит от поста
         - Средний: 0.3  
         - Крупный: 0.5
 
-*Источник:*
-*Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.). Hillsdale, NJ: Lawrence Erlbaum Associates.*   
+*Источник: Cohen, J. (1988). Statistical Power Analysis for the Behavioral Sciences (2nd ed.). Hillsdale, NJ: Lawrence Erlbaum Associates.*   
 
 **Romano et al. (2006) — Appropriate statistics for ordinal level data...**  
 > Romano, Kromrey, Coraggio и Skowronek предложили и популяризовали использование Cliff’s Delta (δ) как непараметрической альтернативы Cohen’s d, устойчивой к выбросам и ненормальности распределений.
@@ -813,8 +812,7 @@ H₁: Категория прибыльности зависит от поста
         - Крупный: |δ| ≥ 0.474  
 - Rank-biserial correlation — производная мера для двух независимых выборок (альтернатива r для непараметрических тестов).
   
-*Источник:*    
-*Romano, J., Kromrey, J. D., Coraggio, J., & Skowronek, J. (2006).*  
+*Источник: Romano, J., Kromrey, J. D., Coraggio, J., & Skowronek, J. (2006).*  
 *Appropriate statistics for ordinal level data: Should we really be using t-test and Cohen’s d for evaluating group differences on the NSSE and other surveys?*  
 *Annual Meeting of the Florida Association of Institutional Research, Cocoa Beach, FL.*  
 
