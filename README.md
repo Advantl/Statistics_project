@@ -954,32 +954,31 @@ H₁: Категория прибыльности зависит от поста
   
 ### Структура репозитория     
 
- 
-├── config/                    # Конфигурационные файлы и парсеры   
-│   ├── config.ini             # Основной конфигурационный файл - скрыт   
-│   └── config_loader.py       # Скрипт для чтения и использования config.ini 
-│      
-├── etl/                       # Извлечение и обработка данных  
-│   ├── __init__.py    
-│   ├── db_connection.py       # Получение данных из SQL   
-│   └── data_cleaner.py        # Очистка данных  
-│  
-├── notebooks/                 # Статистический анализ, гипотезы   
-│ ├── hypothesis_01.ipynb    
-│ ├── hypothesis_02.ipynb   
-│ ├── hypothesis_03.ipynb  
-│ ├── hypothesis_04.ipynb   
-│ ├── hypothesis_05.ipynb   
-│ ├── hypothesis_06.ipynb   
-│ ├── hypothesis_07.ipynb   
-│ ├── hypothesis_08.ipynb   
-│ ├── hypothesis_09.ipynb    
-│ └── hypothesis_10.ipynb   
-│         
-├── visualizations/            # Графики и таблицы    
-├── requirements.txt           # Зависимости    
-└── README.md                  # Описание проекта    
-
+    Statistics_project/  
+    ├── config/                      # Конфигурационные файлы и парсеры   
+    │    ├── config.ini              # Основной конфигурационный файл - скрыт   
+    │    └── config_loader.py        # Скрипт для чтения и использования config.ini 
+    │      
+    ├── etl/                         # Извлечение и обработка данных  
+    │    ├── __init__.py    
+    │    ├── db_connection.py        # Получение данных из SQL   
+    │    └── data_cleaner.py         # Очистка данных  
+    │  
+    ├── notebooks/                   # Статистический анализ, гипотезы   
+    │    ├── hypothesis_01.ipynb    
+    │    ├── hypothesis_02.ipynb   
+    │    ├── hypothesis_03.ipynb  
+    │    ├── hypothesis_04.ipynb   
+    │    ├── hypothesis_05.ipynb   
+    │    ├── hypothesis_06.ipynb   
+    │    ├── hypothesis_07.ipynb   
+    │    ├── hypothesis_08.ipynb   
+    │    ├── hypothesis_09.ipynb    
+    │    └── hypothesis_10.ipynb   
+    │         
+    ├── visualizations/             # Графики и таблицы    
+    ├── requirements.txt            # Зависимости    
+    └── README.md                   # Описание проекта    
 
 ### Воспроизведение результатов    
 
