@@ -952,7 +952,7 @@ H₁: Категория прибыльности зависит от поста
 - SQLAlchemy + адаптер СУБД (psycopg2 для Postgres) — безопасная загрузка данных из SQL.  
 - В проекте реализован OOP-класс-обёртка для подключения и выгрузки данных (единственное место, где описывается подключение и кэширование запросов). Это улучшает читаемость и переиспользуемость кода.  
 
-#
+
   
 ### Структура репозитория     
 
@@ -982,33 +982,7 @@ Statistics_project/
 ├── requirements.txt           # Зависимости    
 └── README.md                  # Описание проекта    
 
-# Структура проекта
 
-    ├── config/              # Конфигурационные файлы и парсеры
-    │   ├── config.ini       # Основной конфигурационный файл - скрыт
-    │   └── config_loader.py # Скрипт для чтения и использования config.ini
-    ├── etl/                 # Извлечение и обработка данных
-    │   ├── init.py
-    │   ├── db_connection.py # Получение данных из SQL
-    │   └── data_cleaner.py  # Очистка данных
-    ├── notebooks/           # Статистический анализ, гипотезы
-    │   ├── hypothesis_01.ipynb
-    │   ├── hypothesis_02.ipynb
-    │   ├── hypothesis_03.ipynb
-    │   ├── hypothesis_04.ipynb
-    │   ├── hypothesis_05.ipynb
-    │   ├── hypothesis_06.ipynb
-    │   ├── hypothesis_07.ipynb
-    │   ├── hypothesis_08.ipynb
-    │   ├── hypothesis_09.ipynb
-    │   └── hypothesis_10.ipynb
-    ├── visualizations/      # Графики и таблицы
-    ├── requirements.txt     # Зависимости
-    └── README.md            # Описание проекта
-
-
-
-#
 
 ### Воспроизведение результатов    
 
@@ -1016,16 +990,16 @@ Statistics_project/
 pip install -r requirements.txt  
 ```
 
-Пояснение к механизму кэширования запросов  
+**Пояснение к механизму кэширования запросов**  
 В проекте реализовано простое файловое кэширование SQL-запросов для ускорения аналитических операций и снижения нагрузки на базу данных.  
 Механизм встроен непосредственно в метод execute_query() класса PostgresConnection.  
 
-Принцип работы:  
+**Принцип работы:**  
 При вызове метода execute_query(query, cache_path=...) система сначала проверяет, существует ли локальный файл по указанному пути (cache_path).  
 Если файл найден, данные загружаются из кэша (CSV-файл), без обращения к базе данных.  
 Если файла нет — выполняется SQL-запрос через SQLAlchemy, результат сохраняется в cache_path и может быть использован повторно при следующих запусках.  
 
-Пример использования:  
+**Пример использования:**  
 
 ```
 from db_connection import PostgresConnection
@@ -1045,32 +1019,4 @@ df_cached = db.execute_query(
 )
 ```
 
-
 [↑ Вернуться к содержанию](#содержание)
-
-
-# Структура проекта
-
-```plaintext
-Statistics_project/
-├── config/              # Конфигурационные файлы и парсеры
-│   ├── config.ini       # Основной конфигурационный файл - скрыт
-│   └── config_loader.py # Скрипт для чтения и использования config.ini
-├── etl/                 # Извлечение и обработка данных
-│   ├── init.py
-│   ├── db_connection.py # Получение данных из SQL
-│   └── data_cleaner.py  # Очистка данных
-├── notebooks/           # Статистический анализ, гипотезы
-│   ├── hypothesis_01.ipynb
-│   ├── hypothesis_02.ipynb
-│   ├── hypothesis_03.ipynb
-│   ├── hypothesis_04.ipynb
-│   ├── hypothesis_05.ipynb
-│   ├── hypothesis_06.ipynb
-│   ├── hypothesis_07.ipynb
-│   ├── hypothesis_08.ipynb
-│   ├── hypothesis_09.ipynb
-│   └── hypothesis_10.ipynb
-├── visualizations/      # Графики и таблицы
-├── requirements.txt     # Зависимости
-└── README.md            # Описание проекта
