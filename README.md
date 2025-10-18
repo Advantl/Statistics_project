@@ -957,16 +957,16 @@ H₁: Категория прибыльности зависит от поста
 ### Структура репозитория     
 
 Statistics_project/  
-├── config/      # Конфигурационные файлы и парсеры   
-│   ├── config.ini      # Основной конфигурационный файл - скрыт   
+├── config/                   # Конфигурационные файлы и парсеры   
+│   ├── config.ini            # Основной конфигурационный файл - скрыт   
 │   └── config_loader.py      # Скрипт для чтения и использования config.ini 
 │      
-├── etl/    # Извлечение и обработка данных  
+├── etl/                      # Извлечение и обработка данных  
 │   ├── __init__.py    
 │   ├── db_connection.py      # Получение данных из SQL   
-│   └── data_cleaner.py      # Очистка данных  
+│   └── data_cleaner.py       # Очистка данных  
 │  
-├── notebooks/      # Статистический анализ, гипотезы   
+├── notebooks/                # Статистический анализ, гипотезы   
 │ ├── hypothesis_01.ipynb   
 │ ├── hypothesis_02.ipynb   
 │ ├── hypothesis_03.ipynb  
@@ -978,9 +978,9 @@ Statistics_project/
 │ ├── hypothesis_09.ipynb    
 │ └── hypothesis_10.ipynb   
 │         
-├── visualizations/      # Графики и таблицы    
-├── requirements.txt      # Зависимости    
-└── README.md      # Описание проекта    
+├── visualizations/           # Графики и таблицы    
+├── requirements.txt          # Зависимости    
+└── README.md                 # Описание проекта    
 
 #
 
@@ -989,5 +989,35 @@ Statistics_project/
 ```
 pip install -r requirements.txt  
 ```
+
+Пояснение к механизму кэширования запросов  
+В проекте реализовано простое файловое кэширование SQL-запросов для ускорения аналитических операций и снижения нагрузки на базу данных.  
+Механизм встроен непосредственно в метод execute_query() класса PostgresConnection.  
+
+Принцип работы:  
+При вызове метода execute_query(query, cache_path=...) система сначала проверяет, существует ли локальный файл по указанному пути (cache_path).  
+Если файл найден, данные загружаются из кэша (CSV-файл), без обращения к базе данных.  
+Если файла нет — выполняется SQL-запрос через SQLAlchemy, результат сохраняется в cache_path и может быть использован повторно при следующих запусках.  
+
+Пример использования:  
+
+```
+from db_connection import PostgresConnection
+
+db = PostgresConnection("config_rfm.ini")
+
+# При первом вызове запрос выполнится в БД и сохранится в кэш
+df = db.execute_query(
+    "SELECT * FROM sales WHERE date >= '2024-01-01'",
+    cache_path="cache/sales_2024.csv"
+)
+
+# При повторном вызове данные будут загружены из кэша, без подключения к БД
+df_cached = db.execute_query(
+    "SELECT * FROM sales WHERE date >= '2024-01-01'",
+    cache_path="cache/sales_2024.csv"
+)
+```
+
 
 [↑ Вернуться к содержанию](#содержание)
