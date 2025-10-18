@@ -957,15 +957,16 @@ H₁: Категория прибыльности зависит от поста
 ### Структура репозитория     
 
 Statistics_project/  
-├── config/   
-│   └── config.ini # Основной конфигурационный файл - скрыт   
+├── config/    # Конфигурационные файлы и парсеры   
+│   ├── config.ini    # Основной конфигурационный файл - скрыт   
+│   └── config_loader.py    # Скрипт для чтения и использования config.ini 
 │      
-├── etl/  
+├── etl/    # Извлечение и обработка данных  
 │   ├── __init__.py    
-│   ├── db_connection.py  # Получение данных из SQL   
-│   └── data_cleaner.py  # Очистка данных  
+│   ├── db_connection.py    # Получение данных из SQL   
+│   └── data_cleaner.py    # Очистка данных  
 │  
-├── notebooks/   
+├── notebooks/    # Статистический анализ, гипотезы   
 │ ├── hypothesis_01.ipynb   
 │ ├── hypothesis_02.ipynb   
 │ ├── hypothesis_03.ipynb  
@@ -977,9 +978,9 @@ Statistics_project/
 │ ├── hypothesis_09.ipynb    
 │ └── hypothesis_10.ipynb   
 │         
-├── visualizations/ # графики и таблицы    
-├── requirements.txt  # Зависимости    
-└── README.md # Описание проекта    
+├── visualizations/    # Графики и таблицы    
+├── requirements.txt    # Зависимости    
+└── README.md    # Описание проекта    
 
 #
 
