@@ -985,7 +985,7 @@ H₁: Категория прибыльности зависит от поста
     │         
     ├── visualizations/              # Графики и таблицы    
     ├── requirements.txt             # Зависимости    
-    ├── project_presentation.pdf    # Презентация проекта
+    ├── project_presentation.pdf     # Презентация проекта
     └── README.md                    # Описание проекта    
 
 ### Воспроизведение результатов    
